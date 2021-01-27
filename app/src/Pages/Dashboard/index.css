@@ -1,0 +1,46 @@
+#shell-main-container-with-toolbar{
+    position: relative;
+    background-color: #FFF;
+    min-height: calc(100vh - 64px) !important;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+#shell-story-label{
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+
+#shell-story-name{
+    max-width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+#shell-card-table{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+#shell-users-table{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: auto;
+}

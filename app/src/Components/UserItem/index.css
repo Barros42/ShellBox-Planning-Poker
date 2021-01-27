@@ -1,0 +1,79 @@
+.user-item{
+    background-color: #e2e2e2;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    color: #3f413d;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    cursor: pointer;
+}
+
+.user-item.contain-votes{
+    background-color: #fbce06 !important;
+}
+
+.user-item:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.user-item.voted{
+    background-color: #fbd336;
+    color: #3f413d;
+}
+
+.user-item-name{
+    float: left;
+    font-weight: bold;
+}
+
+.user-item-nota{
+    float: right;
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #fcce05;
+    color: #dd1c21;
+    background-image: url('../../assets/images/shell.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size: 0px;
+    background-color: unset;
+}
+
+.user-item.voted .user-item-nota{
+    background-image: unset;
+    color: white;
+    background-color: #dd1c21;
+    font-size: 0.9rem;
+}
+
+@media(max-width: 600px){
+    .user-item{
+        height: 20px;
+        line-height: 22.5px;
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .user-item-nota{
+        width: 20px;
+        height: 20px;
+    }
+
+    .user-item.voted .user-item-nota{
+        background-image: unset;
+        color: white;
+        background-color: #dd1c21;
+        font-size: 0.6rem;
+        line-height: 20px;
+        overflow: hidden;
+    }
+
+}

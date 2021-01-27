@@ -1,0 +1,6 @@
+export * from './getUserNameFromStorage'
+export * from './userIsLogged'
+export * from './logoutUser'
+export * from './navigatorVibrate'
+export * from './getUserFromStorage'
+export * from './getUserRoomFromStorage'

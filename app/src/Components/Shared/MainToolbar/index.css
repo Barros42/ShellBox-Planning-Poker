@@ -1,0 +1,64 @@
+#root header.MuiAppBar-colorPrimary{
+    position: relative;
+    background-color: #dd1c21;
+    z-index: 99;
+}
+
+#shell-poker-appname{
+    cursor: pointer;
+}
+
+#shellbox-toolbar-icon{
+    background-position: center center;
+    background-size: contain;
+    background-image: url('../../../assets/images/shell.svg');
+    width: 44px;
+    height: 44px;
+    margin-right: 10px;
+}
+
+#shell-poker-username{
+    margin-left:auto;
+    margin-right: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 200px;
+    cursor: pointer;
+}
+
+@media (max-width: 600px){
+    #shell-poker-toolbar .MuiTypography-h5 {
+        font-size: 1.1rem !important;
+    }
+    #shell-poker-username{
+        font-size: 1.1rem !important;
+    }
+
+    #shellbox-toolbar-icon{
+        width: 34px;
+        height: 34px;
+    }
+}
+
+@media (max-width: 500px) {
+    #shell-poker-username{
+        display: none;
+    }
+}
+
+@media (max-width: 350px) {
+    #shell-poker-toolbar .MuiTypography-h5 {
+        font-size: 0.9rem !important;
+    }
+    #shellbox-toolbar-icon{
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 350px) {
+    #shellbox-toolbar-icon{
+        display: none;
+    }
+}

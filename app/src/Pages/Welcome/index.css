@@ -1,0 +1,60 @@
+#shell-main-container{
+    height: calc(100vh - 10%);
+}
+
+#shell-card{
+    width: 40%;
+    min-width: 400px;
+    margin: auto;
+    height: 400px;
+    margin-top: 10%;
+    border-bottom: 4px solid #ffcf00;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#shell-card-logo{
+    width: 80px;
+    height: 80px;
+    background-position: center center;
+    background-size: contain;
+    background-image: url('../../assets/images/shell.svg');
+    margin: auto;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #333333 !important;
+    border-width: 2px;
+}
+
+.MuiFormLabel-root.Mui-focused {
+    color: #333333 !important;
+}
+
+#shell-enter-button{
+    margin-top: 20px;
+    width: 200px;
+    max-width: 90%;
+    background-color: #dd1c21;
+    color: #FFF;
+    font-weight: bold;
+}
+
+#shell-enter-button:disabled{
+    background-color: #dcdcdc;
+}
+
+#shell-poker-form-control{
+    width: 100%;
+}
+
+#shell-input-room{
+    text-align: left;
+}
+
+@media (max-width: 500px) {
+    #shell-card{
+        min-width: 90%;
+    }
+}

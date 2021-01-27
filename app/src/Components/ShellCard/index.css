@@ -1,0 +1,44 @@
+.shell-card{
+    background-color: #fff;
+    width: calc(100% * (1/6) - 22px);
+    height: 150px;
+    margin: 10px;
+    text-align: center;
+    line-height: 150px;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: 1px solid #dd1c2147
+}
+
+.shell-card.selected{
+    box-shadow: #fed000 0px 3px 8px;
+    border: 1px solid #fed000;
+    color: #dd1c21;
+}
+
+.shell-card:not(.disabled):hover{
+    box-shadow: #fed000 0px 3px 8px;
+    border: 1px solid #fed000;
+    color: #dd1c21;
+}
+
+.shell-card.disabled{
+    color: #c5c5c5;
+}
+
+.shell-card.disabled:hover{
+    cursor: not-allowed;
+}
+
+
+@media(max-width: 600px){
+    .shell-card{
+        width: calc(25% - 22px);
+        height: 50px;
+        line-height: 50px;
+        font-size: 1.2rem;
+    }
+}
