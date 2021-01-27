@@ -1,3 +1,5 @@
+import AppConfig from './config/AppConfig.js'
+
 import { createServer } from "http";
 import { Server } from "socket.io";
 
@@ -37,8 +39,6 @@ io.on("connection", (socket) => {
 
 });
 
-
-
-httpServer.listen(4000, () => {
+httpServer.listen(AppConfig.API_PORT, () => {
   console.log('Server Listening in port 4000')
 });

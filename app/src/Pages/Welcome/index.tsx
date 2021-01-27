@@ -5,6 +5,7 @@ import RegisterUserUseCase from '../../UseCases/Pages/Welcome/registerUser.useCa
 import { useHistory } from 'react-router-dom'
 import ShellPokerPages from '..'
 import { getUserNameFromStorage, getUserRoomFromStorage } from '../../Helpers'
+import AppConfig from '../../Core/AppConfig'
  
 const WelcomePage = () => {
 
@@ -29,7 +30,7 @@ const WelcomePage = () => {
             <Card id='shell-card'>
                 <div id='shell-card-logo'></div>
                 <Typography variant="h5" component="h2">
-                    <b>ShellBox - Planning Poker</b>
+                    <b>{AppConfig.appName}</b>
                 </Typography>
 
                 <FormControl variant="outlined" id="shell-poker-form-control">

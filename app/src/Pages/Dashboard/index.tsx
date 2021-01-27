@@ -8,11 +8,11 @@ import SocketService from '../../Services/SocketService/socket.service'
 import { getUserFromStorage, getUserRoomFromStorage } from '../../Helpers'
 import User from '../../Domain/user'
 import LocalStorageKeys from '../../Consts/localStorageKeys'
+import SocketEvents from '../../Core/SocketEvents'
 
 const DashboardPage = () => {
 
     const options = ['0', '1/2', '1', '2', '3', '5', '8', '13', '20', '40', '100', '?']
-    
     const [currentHistory, setCurrentStory] = useState<string>('VPOWER-4242')
     const [users, setUsers] = useState<User[]>([])
     const currentUser = getUserFromStorage()
@@ -44,8 +44,8 @@ const DashboardPage = () => {
             return
         }
 
-        ss.on('refreshRoom', refreshCurrentRoom)
-        ss.on('cleanVotes', cleanUserVotes)
+        ss.on(SocketEvents.input.refreshingRoom, refreshCurrentRoom)
+        ss.on(SocketEvents.input.cleaningVotes, cleanUserVotes)
         setSocketService(ss)
     }
 
@@ -53,7 +53,7 @@ const DashboardPage = () => {
         (vote: string) =>{
             localStorage.setItem(LocalStorageKeys.UserLastVote, vote)
             setTempLastVote(vote)
-            socketService!.emit('newVote', {
+            socketService!.emit(SocketEvents.output.userVoted, {
                 vote,
                 currentUser
             })
@@ -61,11 +61,11 @@ const DashboardPage = () => {
     )
 
     const changeVoteVisibility = () => {
-        socketService!.emit('changeVoteVisibility', (!showVotes))
+        socketService!.emit(SocketEvents.output.changeVoteVisibility, (!showVotes))
     }
 
     const cleanRoomVotes = () => {
-        socketService!.emit('cleanVotes', null)
+        socketService!.emit(SocketEvents.output.cleanVotes, null)
     }
 
     useEffect(() => {

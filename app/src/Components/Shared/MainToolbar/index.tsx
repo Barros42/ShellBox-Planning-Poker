@@ -1,5 +1,6 @@
 import { AppBar, Toolbar, Typography } from '@material-ui/core'
 import React, { useEffect, useState } from 'react'
+import AppConfig from '../../../Core/AppConfig'
 import { getUserNameFromStorage } from '../../../Helpers'
 import MainMenToolbar from '../MainMenu'
 import './index.css'
@@ -29,7 +30,7 @@ const MainToolbar = (props: IMainToolbar) => {
                 />
                 
                 <div id='shellbox-toolbar-icon'></div>
-                <Typography id="shell-poker-appname" variant="h5" component="h2" title="ShellBox - Planning Poker" ><b>ShellBox - Planning Poker</b></Typography>
+                <Typography id="shell-poker-appname" variant="h5" component="h2" title={AppConfig.appName}><b>{AppConfig.appName}</b></Typography>
                 <Typography id="shell-poker-username" variant="h6" component="h2" title={`Olá, ${userName}`}>Olá, {userName}</Typography>
             </Toolbar>
         </AppBar>

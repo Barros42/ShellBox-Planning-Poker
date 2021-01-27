@@ -1,4 +1,6 @@
 import io from 'socket.io-client'
+import AppConfig from '../../Core/AppConfig'
+import SocketEvents from '../../Core/SocketEvents'
 
 export default class SocketService {
 
@@ -8,7 +10,7 @@ export default class SocketService {
         console.log('SocketService :: connect')
        
         if(!this.socket.connected){
-            this.socket = io('http://192.168.15.9:4000', {
+            this.socket = io(AppConfig.apiUrl, {
                 query:{
                     room,
                     clientId,
@@ -20,7 +22,7 @@ export default class SocketService {
 
     public disconnect(): void {
         console.log(`Socket Service :: disconnect`)
-        this.emit('userExiting', null)
+        this.emit(SocketEvents.output.userExiting, null)
         setTimeout(() => {
             this.socket.disconnect()
         }, 500)
