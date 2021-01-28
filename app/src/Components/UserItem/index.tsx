@@ -10,7 +10,7 @@ interface IUserItem{
 const UserItem = (props: IUserItem) => {
 
     const showVotesClass = (props.showVotes) ? 'voted' : ''
-    const userVote = (props.vote) ? props.vote : ''
+    const userVote = (props.vote) ? props.vote : '🤷'
     const containVotesClass = (props.vote) ? 'contain-votes' : ''
 
     return(
