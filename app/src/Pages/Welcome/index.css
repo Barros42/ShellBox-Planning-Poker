@@ -53,6 +53,14 @@
     text-align: left;
 }
 
+#app-version{
+    font-weight: bold;
+    position: relative;
+    margin: auto;
+    margin-top: 20px;
+    color: #9a9a9a;
+}
+
 @media (max-width: 500px) {
     #shell-card{
         min-width: 90%;

@@ -54,9 +54,7 @@ const WelcomePage = () => {
                     style={{ marginTop: '20px' }}
                     >   
                         <MenuItem value={'null'} selected>Select a Room</MenuItem>
-                        {
-                            RoomList.map(room => <MenuItem value={room.nick}>{room.name}</MenuItem>)
-                        }
+                        {RoomList.map(room => <MenuItem value={room.nick}>{room.name}</MenuItem>)}
                     </Select>
                 </FormControl>
 
@@ -73,6 +71,7 @@ const WelcomePage = () => {
                     <b>Entrar</b>
                 </Button>
 
+                <div id="app-version" title={`v${AppConfig.appVersion}`}>v{AppConfig.appVersion}</div>
 
             </Card>
         </Container>
