@@ -9,5 +9,8 @@
     "express": "^4.17.1",
     "socket.io": "^3.1.0"
   },
+  "scripts": {
+    "start": "node index.js"
+  },
   "type": "module"
 }

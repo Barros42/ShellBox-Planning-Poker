@@ -15,7 +15,6 @@ const ShellCard = (props: IShellCardProps) => {
         cardClass = 'selected'
     }
 
-
     const selectThisCard = (): void => {
         if(props.currentVote) return
         navigatorVibrate(100)

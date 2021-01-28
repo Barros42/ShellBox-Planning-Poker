@@ -6,6 +6,7 @@ import { useHistory } from 'react-router-dom'
 import ShellPokerPages from '..'
 import { getUserNameFromStorage, getUserRoomFromStorage } from '../../Helpers'
 import AppConfig from '../../Core/AppConfig'
+import RoomList from '../../Domain/roomList'
  
 const WelcomePage = () => {
 
@@ -53,13 +54,9 @@ const WelcomePage = () => {
                     style={{ marginTop: '20px' }}
                     >   
                         <MenuItem value={'null'} selected>Select a Room</MenuItem>
-                        <MenuItem value={'vpower'}>V-Power</MenuItem>
-                        <MenuItem value={'beta'}>Beta</MenuItem>
-                        <MenuItem value={'aplha'}>Alpha</MenuItem>
-                        <MenuItem value={'nafta'}>Nafta</MenuItem>
-                        <MenuItem value={'system'}>System Team</MenuItem>
-                        <MenuItem value={'vingadores'}>Vingadores</MenuItem>
-                        <MenuItem value={'ligadajustica'}>Liga da Justiça</MenuItem>
+                        {
+                            RoomList.map(room => <MenuItem value={room.nick}>{room.name}</MenuItem>)
+                        }
                     </Select>
                 </FormControl>
 

@@ -4,9 +4,13 @@ import ClientEvents from '../../../domain/events/clientEvents.js'
 
 const changeVoteVisibility = {
     run: (action, socket, io) => {
-        const dataFromHandShake = getDataFromHandshake(socket.handshake.query)
-        const RefreshedRoom = ChangeVoteVisibilityUseCase.run(dataFromHandShake.room, action)
-        io.to(dataFromHandShake.room).emit(ClientEvents.refreshRoom, RefreshedRoom)
+        try {
+            const dataFromHandShake = getDataFromHandshake(socket.handshake.query)
+            const RefreshedRoom = ChangeVoteVisibilityUseCase.run(dataFromHandShake.room, action)
+            io.to(dataFromHandShake.room).emit(ClientEvents.refreshRoom, RefreshedRoom)
+        } catch (error) {
+            console.log(`Error :: changeVoteVisibility :: run ::`, error)
+        }
     }
 }
 

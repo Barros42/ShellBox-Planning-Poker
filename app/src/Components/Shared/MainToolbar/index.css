@@ -27,7 +27,26 @@
     cursor: pointer;
 }
 
+.only-mobile{
+    display: none;
+}
+
+.singleLineWithDots{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 @media (max-width: 600px){
+
+    .only-mobile{
+        display: block;
+    }
+    
+    .only-desktop{
+        display: none;
+    }
+
     #shell-poker-toolbar .MuiTypography-h5 {
         font-size: 1.1rem !important;
     }
