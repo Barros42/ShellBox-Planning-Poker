@@ -5,6 +5,7 @@ import changeVoteVisibility from '../external/functions/rooms/changeVoteVisibili
 import cleanRoomVotes from '../external/functions/rooms/cleanRoomVotes.js'
 import SocketEvents from '../domain/events/socketEvents.js'
 import AppConfig from '../config/AppConfig.js'
+import appLogger from '../helpers/appLogger.js'
 
 const bootstrap = async (io, httpServer) => {
     try {
@@ -34,7 +35,7 @@ const bootstrap = async (io, httpServer) => {
         });
     
         httpServer.listen(AppConfig.API_PORT, () => {
-            console.log(`${AppConfig.API_NAME} API @ Running on ${AppConfig.API_PORT}`)
+            appLogger()
         });
   
   } catch (error) {
