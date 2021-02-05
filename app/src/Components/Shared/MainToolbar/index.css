@@ -1,6 +1,6 @@
 #root header.MuiAppBar-colorPrimary{
     position: relative;
-    background-color: #dd1c21;
+    background-color: var(--main-color);
     z-index: 99;
 }
 
@@ -11,10 +11,11 @@
 #shellbox-toolbar-icon{
     background-position: center center;
     background-size: contain;
-    background-image: url('../../../assets/images/shell.svg');
+    background-image: url('../../../assets/images/logo.svg');
     width: 44px;
     height: 44px;
     margin-right: 10px;
+    background-repeat: no-repeat;
 }
 
 #shell-poker-username{

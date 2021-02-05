@@ -1,18 +1,18 @@
 .user-item{
-    background-color: #e2e2e2;
+    background-color: var(--user-item-color);
     margin: 10px;
     padding: 10px;
     border-radius: 5px;
     height: 30px;
     line-height: 30px;
     float: left;
-    color: #3f413d;
+    color: var(--user-item-text-color);
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     cursor: pointer;
 }
 
 .user-item.contain-votes{
-    background-color: #fbce06 !important;
+    background-color: var(--user-item-cotain-votes) !important;
 }
 
 .user-item:hover{
@@ -20,8 +20,8 @@
 }
 
 .user-item.voted{
-    background-color: #fbd336;
-    color: #3f413d;
+    background-color: var(--user-item-voted-color);
+    color: var(--user-item-voted);
 }
 
 .user-item-name{
@@ -37,20 +37,21 @@
     border-radius: 5px;
     font-weight: bold;
     text-align: center;
-    background-color: #fcce05;
-    color: #dd1c21;
-    background-image: url('../../assets/images/shell.svg');
+    background-color: var(--user-item-cotain-votes);
+    color: var(--main-color);
+    background-image: url('../../assets/images/logo.svg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
     font-size: 0px;
     background-color: unset;
+    background-repeat: no-repeat;
 }
 
 .user-item.voted .user-item-nota{
     background-image: unset;
     color: white;
-    background-color: #dd1c21;
+    background-color: var(--main-color);
     font-size: 0.9rem;
 }
 
@@ -70,7 +71,7 @@
     .user-item.voted .user-item-nota{
         background-image: unset;
         color: white;
-        background-color: #dd1c21;
+        background-color: var(--main-color);
         font-size: 0.6rem;
         line-height: 20px;
         overflow: hidden;

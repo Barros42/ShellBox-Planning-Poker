@@ -1,0 +1,26 @@
+:root {
+
+  /* MAIN FONT */
+  --main-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+
+
+  /* COLORS */
+  --white-color: #fff;
+
+  /* CUSTOM COLORS */
+  --background-default-color: #efefef;
+  --main-color: #dd1c21;
+  --secondary-color: #fed000;
+  --disabled-color: #c5c5c5;
+  --card-border-color: #dd1c2147;
+  --button-disabled: #dcdcdc;
+  --app-version-color: #9a9a9a;
+  --input-outline-color: #333333;
+  --shell-card-color: #ffcf00;
+  --user-item-color: #e2e2e2;
+  --user-item-text-color: #3f413d;
+  --user-item-voted-color: #fbd336;
+  --user-item-cotain-votes: #fbce06;
+  --user-item-voted: #3f413d;
+
+}

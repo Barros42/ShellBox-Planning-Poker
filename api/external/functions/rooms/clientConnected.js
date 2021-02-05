@@ -10,9 +10,17 @@ const clientConnected = {
          socket.join(dataFromHandShake.room)
          const RefreshedRoom = ClientConnectedUseCase.run(dataFromHandShake)
          io.to(dataFromHandShake.room).emit(ClientEvents.refreshRoom, RefreshedRoom)
+         clientConnected.log(dataFromHandShake)
        } catch (error) {
          console.log(`Error :: clientConnected :: run ::`, error)
        }
+    },
+
+    log: (data) => {
+      console.log(`----------------------------------------------------------------`)
+      console.log(`-- New Client Connected :: ${new Date().toUTCString()}`)
+      console.log(`-- Room: ${data.room}`)
+      console.log(`-- User: ${data.client.name}`)
     }
 
 }

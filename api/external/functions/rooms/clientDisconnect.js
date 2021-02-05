@@ -9,10 +9,18 @@ const clientDisconnect = {
             const dataFromHandShake = getDataFromHandshake(socket.handshake.query)
             const RefreshedRoom = ClientDisconnectUseCase.run(dataFromHandShake)
             io.to(dataFromHandShake.room).emit(ClientEvents.refreshRoom, RefreshedRoom)
+            clientDisconnect.log(dataFromHandShake)
         } catch (error) {
             console.log(`Error :: clientDisconnect :: run ::`, error)
         }
-    }
+    },
+
+    log: (data) => {
+        console.log(`----------------------------------------------------------------`)
+        console.log(`-- New Client Disconnected :: ${new Date().toUTCString()}`)
+        console.log(`-- Room: ${data.room}`)
+        console.log(`-- User: ${data.client.name}`)
+      }
 
 }
 

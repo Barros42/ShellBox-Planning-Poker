@@ -8,7 +8,6 @@ import AppConfig from '../config/AppConfig.js'
 
 const bootstrap = async (io, httpServer) => {
     try {
-
         io.on(SocketEvents.newConnection, (socket) => {
 
             clientConnected.run(socket, io)
@@ -32,11 +31,10 @@ const bootstrap = async (io, httpServer) => {
             socket.on(SocketEvents.userCleanRoomVotes, () => {
                 cleanRoomVotes.run(socket, io)
             })
-        
         });
     
         httpServer.listen(AppConfig.API_PORT, () => {
-        console.log('Server Listening in port 4000')
+            console.log(`${AppConfig.API_NAME} API @ Running on ${AppConfig.API_PORT}`)
         });
   
   } catch (error) {

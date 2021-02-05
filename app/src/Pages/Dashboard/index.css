@@ -1,6 +1,6 @@
 #shell-main-container-with-toolbar{
     position: relative;
-    background-color: #FFF;
+    background-color: var(--white-color);
     min-height: calc(100vh - 64px) !important;
     box-sizing: border-box;
     padding: 20px;

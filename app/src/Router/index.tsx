@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import appBootstrap from '../Helpers/appBootstrap'
 import ShellPokerPages from '../Pages'
 import LoggedRoute from './LoggedRoute'
 
 const ShellRouter = () => {
+
+    useEffect(() => {
+        appBootstrap()
+    })
+
     return(
         <Router>
             <Switch>

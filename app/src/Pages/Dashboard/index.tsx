@@ -13,7 +13,7 @@ import SocketEvents from '../../Core/SocketEvents'
 const DashboardPage = () => {
 
     const options = ['0', '1/2', '1', '2', '3', '5', '8', '13', '20', '40', '100', '?']
-    const [currentHistory, setCurrentStory] = useState<string>('VPOWER-4242')
+    const [currentHistory, setCurrentStory] = useState<string>('')
     const [users, setUsers] = useState<User[]>([])
     const currentUser = getUserFromStorage()
     const currentRoom = getUserRoomFromStorage()

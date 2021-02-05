@@ -8,7 +8,7 @@
     margin: auto;
     height: 400px;
     margin-top: 10%;
-    border-bottom: 4px solid #ffcf00;
+    border-bottom: 4px solid var(--shell-card-color);
     text-align: center;
     padding: 20px;
     box-sizing: border-box;
@@ -19,30 +19,31 @@
     height: 80px;
     background-position: center center;
     background-size: contain;
-    background-image: url('../../assets/images/shell.svg');
+    background-repeat: no-repeat;
+    background-image: url('../../assets/images/logo.svg');
     margin: auto;
 }
 
 .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
-    border-color: #333333 !important;
+    border-color: var(--input-outline-color) !important;
     border-width: 2px;
 }
 
 .MuiFormLabel-root.Mui-focused {
-    color: #333333 !important;
+    color: var(--input-outline-color) !important;
 }
 
 #shell-enter-button{
     margin-top: 20px;
     width: 200px;
     max-width: 90%;
-    background-color: #dd1c21;
-    color: #FFF;
+    background-color: var(--main-color);
+    color: var(--white-color);
     font-weight: bold;
 }
 
 #shell-enter-button:disabled{
-    background-color: #dcdcdc;
+    background-color: var(--button-disabled);
 }
 
 #shell-poker-form-control{
@@ -58,7 +59,7 @@
     position: relative;
     margin: auto;
     margin-top: 20px;
-    color: #9a9a9a;
+    color: var(--app-version-color);
 }
 
 @media (max-width: 500px) {

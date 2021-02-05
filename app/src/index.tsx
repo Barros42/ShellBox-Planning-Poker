@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './Styles/index.css';
 import reportWebVitals from './reportWebVitals';
 import ShellRouter from './Router';
 
