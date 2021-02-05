@@ -9,10 +9,11 @@ import { getUserFromStorage, getUserRoomFromStorage } from '../../Helpers'
 import User from '../../Domain/user'
 import LocalStorageKeys from '../../Consts/localStorageKeys'
 import SocketEvents from '../../Core/SocketEvents'
+import VoteOptions from 'Core/VoteOptions'
 
 const DashboardPage = () => {
 
-    const options = ['0', '1/2', '1', '2', '3', '5', '8', '13', '20', '40', '100', '?']
+    const options = VoteOptions.getVoteOptions('fibonnaci')
     const [currentHistory, setCurrentStory] = useState<string>('')
     const [users, setUsers] = useState<User[]>([])
     const currentUser = getUserFromStorage()

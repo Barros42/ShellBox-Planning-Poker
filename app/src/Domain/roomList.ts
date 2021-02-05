@@ -1,11 +1,8 @@
-const RoomList: {nick: string, name: string}[] = [
-    { nick: 'vpower', name: 'V-Power' },
-    { nick: 'beta', name: 'Beta' },
-    { nick: 'alpha', name: 'Alpha' },
-    { nick: 'nafta', name: 'Nafta' },
-    { nick: 'system', name: 'System Team' },
-    { nick: 'vingadores', name: 'Vingadores' },
-    { nick: 'ligadajustica', name: 'Liga da Justiça' }
-]
+import appConfig from '../appConfig.json'
+
+const RoomList: {nick: string, name: string}[] = appConfig.ROOMS.map(r => {
+    r.nick = r.nick.split(' ').join('-')
+    return r
+})
 
 export default RoomList
