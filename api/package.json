@@ -5,7 +5,7 @@
     "email": "mdbf42@gmail.com",
     "url": "https://github.com/Barros42/ShellBox-PP"
   },
-  "version": "1.0.0",
+  "version": "0.2.0",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
@@ -14,6 +14,7 @@
     "socket.io": "^3.1.0"
   },
   "scripts": {
+    "start:dev": "nodemon --experimental-json-modules index.js",
     "start": "node --experimental-json-modules index.js"
   },
   "type": "module"
