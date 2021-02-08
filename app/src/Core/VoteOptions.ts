@@ -17,5 +17,4 @@ export default class VoteOptions {
         return PlanninPokerOptions.FIBONNACI
     }
   }
-
 }
