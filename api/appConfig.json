@@ -1,5 +1,5 @@
 {
   "APP_NAME" : "ShellBox - Planning Poker",
-  "APP_PORT" : 4000,
+  "APP_PORT" : 8080,
   "APP_USE_CORS" : true
 }
