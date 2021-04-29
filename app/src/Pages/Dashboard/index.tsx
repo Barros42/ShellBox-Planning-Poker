@@ -105,7 +105,7 @@ const DashboardPage = () => {
                 <div id="shell-story-name">{currentHistory}</div>
 
                <div id="shell-card-table">
-                {options.map(option => <ShellCard key={option} voteFunction={vote} value={option} currentVote={tempLastVote}/>)}
+                {options.map(option => <ShellCard key={option} voteFunction={vote} value={option} currentVote={tempLastVote} isVisible={showVotes}/>)}
                </div>
 
                <div id="shell-users-table">

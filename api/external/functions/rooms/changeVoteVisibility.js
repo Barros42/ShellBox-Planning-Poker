@@ -8,15 +8,15 @@ const changeVoteVisibility = {
             const dataFromHandShake = getDataFromHandshake(socket.handshake.query)
             const RefreshedRoom = ChangeVoteVisibilityUseCase.run(dataFromHandShake.room, action)
             io.to(dataFromHandShake.room).emit(ClientEvents.refreshRoom, RefreshedRoom)
-            changeVoteVisibility.log(dataFromHandShake)
+            changeVoteVisibility.log(dataFromHandShake, RefreshedRoom.showVotes)
         } catch (error) {
             console.log(`Error :: changeVoteVisibility :: run ::`, error)
         }
     }, 
 
-    log: (data) => {
+    log: (data, showVotes) => {
         console.log(`----------------------------------------------------------------`)
-        console.log(`-- Votes visibility has been changed :: ${new Date().toUTCString()}`)
+        console.log(`-- Votes visibility has been changed to [${showVotes}] :: ${new Date().toUTCString()}`)
         console.log(`-- Room: ${data.room}`)
         console.log(`-- User: ${data.client.name}`)
     }

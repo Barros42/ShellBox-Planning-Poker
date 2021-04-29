@@ -6,10 +6,6 @@ COPY . ./app
 
 WORKDIR /src/app
 
-RUN yarn install
-
-RUN yarn build
-
 RUN yarn global add serve
 
 ENV PORT=8080

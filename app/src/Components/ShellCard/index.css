@@ -10,7 +10,7 @@
     cursor: pointer;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border: 1px solid var(-card-border-color);
+    border: 1px solid transparent;
 }
 
 .shell-card.selected{

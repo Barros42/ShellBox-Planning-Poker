@@ -5,18 +5,19 @@ import './index.css'
 interface IShellCardProps {
     value: string,
     voteFunction: Function,
-    currentVote: string | null
+    currentVote: string | null,
+    isVisible: boolean
 }
 
 const ShellCard = (props: IShellCardProps) => {
 
-    let cardClass = (props.currentVote && (props.currentVote !== props.value)) ? 'disabled' : ''
-    if(props.currentVote === props.value){
-        cardClass = 'selected'
-    }
+    const isVoteVisible = () => props.isVisible
 
+    let cardClass = ((isVoteVisible())) ? 'disabled' : ''
+    cardClass = (props.currentVote === props.value) ? 'selected' : cardClass
+    
     const selectThisCard = (): void => {
-        if(props.currentVote) return
+        if((isVoteVisible())) return
         navigatorVibrate(100)
         props.voteFunction(props.value)
     }

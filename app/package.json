@@ -1,6 +1,6 @@
 {
   "name": "shell-planning-poker",
-  "version": "0.5.3",
+  "version": "0.5.5",
   "private": true,
   "author": {
     "name": "Matheus de Barros Fagionato",
@@ -24,6 +24,7 @@
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "serve": "^11.3.2",
     "socket.io-client": "^3.1.0",
     "typescript": "^4.0.3",
     "uuid": "^8.3.2",
