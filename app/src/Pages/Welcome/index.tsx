@@ -7,6 +7,7 @@ import ShellPokerPages from '..'
 import { getUserNameFromStorage, getUserRoomFromStorage } from '../../Helpers'
 import AppConfig from '../../Core/AppConfig'
 import RoomList from '../../Domain/roomList'
+import Dictionary from 'Core/Dictionary'
  
 const WelcomePage = () => {
 
@@ -38,7 +39,7 @@ const WelcomePage = () => {
 
                     <TextField 
                         id="shell-input-username" 
-                        label="Username" 
+                        label={Dictionary.username} 
                         variant="outlined" 
                         fullWidth
                         value={userName}
@@ -53,7 +54,7 @@ const WelcomePage = () => {
                     onChange={handleRoomChange}
                     style={{ marginTop: '20px' }}
                     >   
-                        <MenuItem value={'null'} selected>Select a Room</MenuItem>
+                        <MenuItem value={'null'} selected>{Dictionary.selectARoom}</MenuItem>
                         {RoomList.map(room => <MenuItem value={room.nick}>{room.name}</MenuItem>)}
                     </Select>
                 </FormControl>
@@ -68,7 +69,7 @@ const WelcomePage = () => {
                     disableFocusRipple={(!userName.length)}
                     onClick={e => registerUser()}
                 >
-                    <b>Entrar</b>
+                    <b>{Dictionary.enter}</b>
                 </Button>
 
                 <div id="app-version" title={`v${AppConfig.appVersion}`}>v{AppConfig.appVersion}</div>

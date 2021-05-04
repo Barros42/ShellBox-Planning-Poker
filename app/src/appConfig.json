@@ -1,6 +1,6 @@
 {
   "APP_NAME" : "ShellBox - Planning Poker",
-  "API_URL" : "http://localhost:8081",
+  "API_URL" : "http://localhost:8080",
 
   "ROOMS" : [
     { "nick": "vpower", "name": "V-Power" },
@@ -9,7 +9,9 @@
     { "nick": "nafta", "name": "Nafta" },
     { "nick": "system", "name": "System Team" },
     { "nick": "vingadores", "name": "Vingadores" },
-    { "nick": "ligadajustica", "name": "Liga da Justiça" }
+    { "nick": "ligadajustica", "name": "Liga da Justiça" },
+    { "nick": "omega", "name": "Ômega" },
+    { "nick": "bope", "name": "Bope" }
   ]
 
 }

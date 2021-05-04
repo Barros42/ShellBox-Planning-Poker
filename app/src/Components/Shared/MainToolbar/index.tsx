@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import AppConfig from '../../../Core/AppConfig'
 import { getRoomNameFromNick, getUserNameFromStorage } from '../../../Helpers'
 import MainMenToolbar from '../MainMenu'
+import Dictionary  from '../../../Core/Dictionary'
 import './index.css'
 
 interface IMainToolbar{
@@ -33,7 +34,7 @@ const MainToolbar = (props: IMainToolbar) => {
                 <div id='shellbox-toolbar-icon'></div>
                 <Typography id="shell-poker-appname" className="only-desktop singleLineWithDots" variant="h5" component="h2" title={`${AppConfig.appName} | ${roomName} @ v${AppConfig.appVersion}`}><b>{`${AppConfig.appName}`} | {`${roomName}`}</b></Typography>
                 <Typography id="shell-poker-appname" className="only-mobile" variant="h5" component="h2" title={`${AppConfig.appName} | ${roomName} @ v${AppConfig.appVersion}`}><b>{`${AppConfig.appName}`} <br/> {`${roomName}`}</b></Typography>
-                <Typography id="shell-poker-username" variant="h6" component="h2" title={`Olá ${userName}`}>Olá {userName}</Typography>
+                <Typography id="shell-poker-username" variant="h6" component="h2" title={`${Dictionary.hello} ${userName}`}>{Dictionary.hello} {userName}</Typography>
             </Toolbar>
         </AppBar>
     )

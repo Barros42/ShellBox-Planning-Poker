@@ -1,5 +1,6 @@
 import { IconButton, MenuItem, Menu as MainMenu } from '@material-ui/core';
 import { Menu } from '@material-ui/icons'
+import Dictionary from 'Core/Dictionary';
 import React from 'react'
 import { useHistory } from 'react-router-dom';
 import { logoutUser } from '../../../Helpers';
@@ -44,9 +45,9 @@ const MainMenToolbar = (props: IMainMenToolbar) => {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
             >
-                <MenuItem onClick={() => { props.changeVoteVisibility(); handleClose() }}>{`${(props.voteVisibility) ? 'Esconder' : 'Mostrar'} Votos`}</MenuItem>
-                <MenuItem onClick={() => { props.cleanRoomVotes(); handleClose(); }}>Limpar Votos</MenuItem>
-                <MenuItem onClick={() => { logoutAndRedirect(); }}>Logout</MenuItem>
+                <MenuItem onClick={() => { props.changeVoteVisibility(); handleClose() }}>{`${(props.voteVisibility) ? Dictionary.hide : Dictionary.show} ${Dictionary.votes}`}</MenuItem>
+                <MenuItem onClick={() => { props.cleanRoomVotes(); handleClose(); }}>{Dictionary.clearVotes}</MenuItem>
+                <MenuItem onClick={() => { logoutAndRedirect(); }}>{Dictionary.logout}</MenuItem>
             </MainMenu>
         </>
     )
