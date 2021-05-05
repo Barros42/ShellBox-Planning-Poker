@@ -1,5 +1,6 @@
 export enum NavigatorLanguage {
   PT_BR = 'pt-BR',
+  ES_AR = 'es-AR',
   EN_US = 'en-US'
 }
 
