@@ -1,0 +1,58 @@
+#shell-flag-language {
+  background-position: center center;
+  background-size: cover;
+  background-repeat:  no-repeat;
+  width: 40px;
+  height: 30px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#shell-flag-language #shell-flags-list {
+  width: 40px;
+  height: auto;
+  position: relative;
+  top: 100%;
+  display: none;
+  padding-top: 2px;
+}
+
+#shell-flag-language .language-flag{
+  width: 40px;
+  height: 30px;
+  margin-bottom: 2px;
+  border-radius: 5px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat:  no-repeat;
+}
+
+#shell-flag-language .language-flag:hover{
+  opacity: 0.8;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#shell-flag-language:hover #shell-flags-list{
+  display: block;
+}
+
+.language-flag-pt{
+  background-image: url('../../assets/icons/brazil_flag.svg');
+}
+
+.language-flag-es{
+  background-image: url('../../assets/icons/argentina_flag.svg');
+}
+
+.language-flag-en{
+  background-image: url('../../assets/icons/usa_flag.svg');
+}

@@ -1,6 +1,7 @@
 import IDictionary from "./IDictionary";
 
 export default class PortugueseDictionary implements IDictionary {
+  changeDefaultLanguage: string = 'Alterar idioma padrão';
   clearVotes: string = 'Limpar Votos'
   votes: string = 'Votos'
   hide: string = 'Esconder'

@@ -10,4 +10,5 @@ export default interface IDictionary {
   selectARoom: string
   enter: string
   username: string
+  changeDefaultLanguage: string
 }

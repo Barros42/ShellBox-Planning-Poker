@@ -8,6 +8,7 @@ import { getUserNameFromStorage, getUserRoomFromStorage } from '../../Helpers'
 import AppConfig from '../../Core/AppConfig'
 import RoomList from '../../Domain/roomList'
 import Dictionary from 'Core/Dictionary'
+import LanguageSelector from 'Components/LanguageSelector'
  
 const WelcomePage = () => {
 
@@ -31,6 +32,9 @@ const WelcomePage = () => {
         <Container id='shell-main-container' maxWidth="lg">
             <Card id='shell-card'>
                 <div id='shell-card-logo'></div>
+                
+                <LanguageSelector/>
+                
                 <Typography variant="h5" component="h2">
                     <b>{AppConfig.appName}</b>
                 </Typography>
@@ -55,7 +59,7 @@ const WelcomePage = () => {
                     style={{ marginTop: '20px' }}
                     >   
                         <MenuItem value={'null'} selected>{Dictionary.selectARoom}</MenuItem>
-                        {RoomList.map(room => <MenuItem value={room.nick}>{room.name}</MenuItem>)}
+                        {RoomList.map(room => <MenuItem key={room.nick} value={room.nick}>{room.name}</MenuItem>)}
                     </Select>
                 </FormControl>
 

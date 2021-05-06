@@ -1,6 +1,7 @@
 import IDictionary from "./IDictionary";
 
 export default class SpanishDictionary implements IDictionary {
+  changeDefaultLanguage: string = 'Cambiar el idioma';
   clearVotes: string = 'Limpiar Votos'
   votes: string = 'Votos'
   hide: string = 'Ocultar'
