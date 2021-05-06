@@ -1,11 +1,18 @@
 export enum NavigatorLanguage {
-  PT_BR = 'pt-BR',
-  ES_AR = 'es-AR',
-  EN_US = 'en-US'
+  PT_BR = 'pt',
+  ES_AR = 'es',
+  EN_US = 'en'
 }
 
 export default class Navigator {
   static getLanguague(): NavigatorLanguage {
-    return navigator.language as NavigatorLanguage || NavigatorLanguage.EN_US
+    let mainLanguage = NavigatorLanguage.EN_US
+    try {
+      const defaultLanguage = navigator.language as NavigatorLanguage || NavigatorLanguage.EN_US
+      mainLanguage = defaultLanguage.split('-')[0] as NavigatorLanguage
+    } catch (error) {
+      console.log(`NavigatorLanguage :: getLanguage :: ${error}`)
+    }
+    return mainLanguage as NavigatorLanguage
   }
 }
