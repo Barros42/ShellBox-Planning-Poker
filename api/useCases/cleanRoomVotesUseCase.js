@@ -2,10 +2,10 @@ import RoomRepository from '../external/repositories/room.repository.js'
 
 const CleanRoomVotesUseCase = {
 
-    run: (room) => {
-        RoomRepository.cleanRoomVotes(room)
-        RoomRepository.changeRoomVoteVisibility(room, false)
-        return RoomRepository.getRoom(room)
+    run: (data) => {
+        RoomRepository.cleanRoomVotes(data.room)
+        RoomRepository.changeRoomVoteVisibility(data.room, false)
+        return RoomRepository.getRoom(data.room)
     }
 
 }

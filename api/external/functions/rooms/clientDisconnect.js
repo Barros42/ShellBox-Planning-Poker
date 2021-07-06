@@ -1,15 +1,14 @@
 import ClientDisconnectUseCase from '../../../useCases/clientDisconnectUseCase.js'
-import getDataFromHandshake from '../../../helpers/getDataFromHandshake.js'
-import ClientEvents from '../../../domain/events/clientEvents.js'
 
 const clientDisconnect = {
 
-    run: (socket, io) => {
+    run: (data) => {
+
+        console.log(data)
+
         try {
-            const dataFromHandShake = getDataFromHandshake(socket.handshake.query)
-            const RefreshedRoom = ClientDisconnectUseCase.run(dataFromHandShake)
-            io.to(dataFromHandShake.room).emit(ClientEvents.refreshRoom, RefreshedRoom)
-            clientDisconnect.log(dataFromHandShake)
+            clientDisconnect.log(data)
+            return ClientDisconnectUseCase.run(data)
         } catch (error) {
             console.log(`Error :: clientDisconnect :: run ::`, error)
         }

@@ -62,7 +62,7 @@ const DashboardPage = () => {
     )
 
     const changeVoteVisibility = () => {
-        socketService!.emit(SocketEvents.output.changeVoteVisibility, (!showVotes))
+        socketService!.emit(SocketEvents.output.changeVoteVisibility, {showVotes: !showVotes})
     }
 
     const cleanRoomVotes = () => {

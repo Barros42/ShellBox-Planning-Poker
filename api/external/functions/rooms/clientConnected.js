@@ -4,13 +4,10 @@ import ClientEvents from '../../../domain/events/clientEvents.js'
 
 const clientConnected = {
 
-    run: (socket, io) => {
+    run: (data) => {
        try {
-         const dataFromHandShake = getDataFromHandshake(socket.handshake.query)
-         socket.join(dataFromHandShake.room)
-         const RefreshedRoom = ClientConnectedUseCase.run(dataFromHandShake)
-         io.to(dataFromHandShake.room).emit(ClientEvents.refreshRoom, RefreshedRoom)
-         clientConnected.log(dataFromHandShake)
+         clientConnected.log(data)
+         return ClientConnectedUseCase.run(data)
        } catch (error) {
          console.log(`Error :: clientConnected :: run ::`, error)
        }

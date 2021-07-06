@@ -4,33 +4,68 @@ import newClientVote from '../../external/functions/rooms/newClientVote.js'
 import changeVoteVisibility from '../../external/functions/rooms/changeVoteVisibility.js'
 import cleanRoomVotes from '../../external/functions/rooms/cleanRoomVotes.js'
 import SocketEvents from '../../domain/events/socketEvents.js'
+import getDataFromHandshake from '../../helpers/getDataFromHandshake.js'
+import ClientEvents from '../../domain/events/clientEvents.js'
+import extractDataFromEvent from '../../helpers/extractDataFromEvent.js'
 
 const registerEvents = (io) => {
 
   io.on(SocketEvents.newConnection, (socket) => {
 
-    clientConnected.run(socket, io)
-    
+    /**
+     * @ On Client Connect
+     */
+    const eventData = extractDataFromEvent(socket)
+    const useCaseResponse = clientConnected.run(eventData)
+    io.to(eventData.room).emit(ClientEvents.refreshRoom, useCaseResponse)
+    socket.join(eventData.room)
+   
+    /**
+     * @ On Client Disconnect
+     */
     socket.on(SocketEvents.clientDisconnect, () => {
-        clientDisconnect.run(socket, io)
+        const eventData = extractDataFromEvent(socket)
+        const useCaseResponse = clientDisconnect.run(eventData)
+        io.to(eventData.room).emit(ClientEvents.refreshRoom, useCaseResponse)    
     })
-    
+
+    /**
+     * @ On Client Exit
+     */
     socket.on(SocketEvents.userExiting, () =>{
-        clientDisconnect.run(socket, io)
+        const eventData = extractDataFromEvent(socket)
+        const useCaseResponse = clientDisconnect.run(eventData)
+        io.to(eventData.room).emit(ClientEvents.refreshRoom, useCaseResponse)
     })
     
+    /**
+     * @ On New Client Vote
+     */
     socket.on(SocketEvents.userSendNewVote, (payload) => {
-        newClientVote.run(payload, socket, io)
+        const eventData = extractDataFromEvent(socket, payload)
+        const useCaseResponse = newClientVote.run(eventData)
+        io.to(eventData.room).emit(ClientEvents.refreshRoom, useCaseResponse)
     })
     
-    socket.on(SocketEvents.userChangeVoteVisibility, (action) => {
-        changeVoteVisibility.run(action, socket, io)
+    /**
+     * @ On Change Vote Visibility Event
+     */
+    socket.on(SocketEvents.userChangeVoteVisibility, (payload) => {
+        const eventData = extractDataFromEvent(socket, payload)
+        const useCaseResponse = changeVoteVisibility.run(eventData)
+        io.to(eventData.room).emit(ClientEvents.refreshRoom, useCaseResponse)
     })
     
+    /**
+     * @ On Clean Room Votes
+     */
     socket.on(SocketEvents.userCleanRoomVotes, () => {
-        cleanRoomVotes.run(socket, io)
+        const eventData = extractDataFromEvent(socket, null)
+        const useCaseResponse = cleanRoomVotes.run(eventData)
+        io.to(eventData.room).emit(ClientEvents.cleanVotes)
+        io.to(eventData.room).emit(ClientEvents.refreshRoom, useCaseResponse)
     })
-  }); 
+  });
 
 }
 

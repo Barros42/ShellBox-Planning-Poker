@@ -2,9 +2,9 @@ import RoomRepository from '../external/repositories/room.repository.js'
 
 const ChangeVoteVisibilityUseCase = {
 
-    run: (room, action) => {
-        RoomRepository.changeRoomVoteVisibility(room, action)
-        return RoomRepository.getRoom(room)
+    run: (data) => {
+        RoomRepository.changeRoomVoteVisibility(data.room, data.showVotes)
+        return RoomRepository.getRoom(data.room)
     }
 
 }
