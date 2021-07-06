@@ -1,7 +1,8 @@
 import LocalStorageKeys from "../Consts/localStorageKeys"
 
 const setSelectedLanguageFromStorage = (selectedLanguage: string): void => {
-  return localStorage.setItem(LocalStorageKeys.UserLanguage, selectedLanguage)
+  const encodedLanguage = Buffer.from(selectedLanguage).toString('base64')
+  return localStorage.setItem(LocalStorageKeys.UserLanguage, encodedLanguage)
 }
 
 export { setSelectedLanguageFromStorage }

@@ -1,14 +1,16 @@
 import { Router } from 'express'
-import AppConfig from '../../../config/AppConfig.js'
+import getRoomData from '../../functions/rooms/getRoomData.js'
 
 const RoomsRouter = Router()
 
-RoomsRouter.post('/vote', (req, res) => {
+RoomsRouter.get('/:roomId', (req, res) => {
+    const data =  {
+        room: req.params.roomId
+    }
+    const functionResponse = getRoomData.run(data)
+    const encodedResponse = Buffer.from(JSON.stringify(functionResponse)).toString('base64')
     res.send({
-           name: AppConfig.API_NAME,
-           port: AppConfig.API_PORT,
-           cors: AppConfig.USE_CORS,
-           version: AppConfig.APP_VERSION
+        data: encodedResponse
     })
 })
 

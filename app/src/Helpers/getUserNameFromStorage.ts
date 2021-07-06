@@ -1,9 +1,11 @@
 import LocalStorageKeys from "../Consts/localStorageKeys"
 
 const getUserNameFromStorage = (arg: 'full' | 'partial'): string => {
-    const UserData = JSON.parse(localStorage.getItem(LocalStorageKeys.UserCredentials)!)
+    const UserDataEncoded = localStorage.getItem(LocalStorageKeys.UserCredentials)!
     
-    if(!UserData) return ''
+    if(!UserDataEncoded) return ''
+
+    const UserData = JSON.parse(Buffer.from(UserDataEncoded,'base64').toString())
 
     let userName = UserData.userName
     

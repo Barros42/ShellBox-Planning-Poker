@@ -11,14 +11,17 @@ export default class RegisterUserUseCase {
     }
 
     async registerUser(userName: string, userRoom: string): Promise<boolean> {
+
         localStorage.removeItem(LocalStorageKeys.UserLastVote)
         
         const userAlreadyLogged = userIsLogged()
         if(userAlreadyLogged) return true
 
         return this.registerUserService.registerUser(userName).then(res => {
-            localStorage.setItem(LocalStorageKeys.UserCredentials, JSON.stringify(res))
-            localStorage.setItem(LocalStorageKeys.UserRoom, userRoom)
+            const encodedCredentials = Buffer.from(JSON.stringify(res)).toString('base64')
+            const encodedRoom = Buffer.from(userRoom).toString('base64')
+            localStorage.setItem(LocalStorageKeys.UserCredentials, encodedCredentials)
+            localStorage.setItem(LocalStorageKeys.UserRoom, encodedRoom)
             return true
         }).catch(err => {
             localStorage.removeItem(LocalStorageKeys.UserCredentials)

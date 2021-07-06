@@ -16,17 +16,17 @@ const registerEvents = (io) => {
      * @ On Client Connect
      */
     const eventData = extractDataFromEvent(socket)
-    const useCaseResponse = clientConnected.run(eventData)
-    io.to(eventData.room).emit(ClientEvents.refreshRoom, useCaseResponse)
     socket.join(eventData.room)
+    const functionResponse = clientConnected.run(eventData)
+    io.to(eventData.room).emit(ClientEvents.refreshRoom, functionResponse)
    
     /**
      * @ On Client Disconnect
      */
     socket.on(SocketEvents.clientDisconnect, () => {
         const eventData = extractDataFromEvent(socket)
-        const useCaseResponse = clientDisconnect.run(eventData)
-        io.to(eventData.room).emit(ClientEvents.refreshRoom, useCaseResponse)    
+        const functionResponse = clientDisconnect.run(eventData)
+        io.to(eventData.room).emit(ClientEvents.refreshRoom, functionResponse)    
     })
 
     /**
@@ -34,8 +34,8 @@ const registerEvents = (io) => {
      */
     socket.on(SocketEvents.userExiting, () =>{
         const eventData = extractDataFromEvent(socket)
-        const useCaseResponse = clientDisconnect.run(eventData)
-        io.to(eventData.room).emit(ClientEvents.refreshRoom, useCaseResponse)
+        const functionResponse = clientDisconnect.run(eventData)
+        io.to(eventData.room).emit(ClientEvents.refreshRoom, functionResponse)
     })
     
     /**
@@ -43,8 +43,8 @@ const registerEvents = (io) => {
      */
     socket.on(SocketEvents.userSendNewVote, (payload) => {
         const eventData = extractDataFromEvent(socket, payload)
-        const useCaseResponse = newClientVote.run(eventData)
-        io.to(eventData.room).emit(ClientEvents.refreshRoom, useCaseResponse)
+        const functionResponse = newClientVote.run(eventData)
+        io.to(eventData.room).emit(ClientEvents.refreshRoom, functionResponse)
     })
     
     /**
@@ -52,8 +52,8 @@ const registerEvents = (io) => {
      */
     socket.on(SocketEvents.userChangeVoteVisibility, (payload) => {
         const eventData = extractDataFromEvent(socket, payload)
-        const useCaseResponse = changeVoteVisibility.run(eventData)
-        io.to(eventData.room).emit(ClientEvents.refreshRoom, useCaseResponse)
+        const functionResponse = changeVoteVisibility.run(eventData)
+        io.to(eventData.room).emit(ClientEvents.refreshRoom, functionResponse)
     })
     
     /**
@@ -61,9 +61,9 @@ const registerEvents = (io) => {
      */
     socket.on(SocketEvents.userCleanRoomVotes, () => {
         const eventData = extractDataFromEvent(socket, null)
-        const useCaseResponse = cleanRoomVotes.run(eventData)
+        const functionResponse = cleanRoomVotes.run(eventData)
         io.to(eventData.room).emit(ClientEvents.cleanVotes)
-        io.to(eventData.room).emit(ClientEvents.refreshRoom, useCaseResponse)
+        io.to(eventData.room).emit(ClientEvents.refreshRoom, functionResponse)
     })
   });
 

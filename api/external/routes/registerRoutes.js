@@ -1,9 +1,11 @@
 import AppConfig from '../../config/AppConfig.js'
 
 import IndexRouter from './Routers/IndexRouter.js'
+import RoomsRouter from './Routers/RoomsRouter.js'
 
 const RoutesMap = [
-    { path: '/', handler: IndexRouter }
+    { path: '/', handler: IndexRouter },
+    { path: '/rooms', handler: RoomsRouter}
 ]
 
 const registerHttpRoutes = (app) => {

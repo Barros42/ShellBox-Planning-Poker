@@ -3,9 +3,6 @@ import ClientDisconnectUseCase from '../../../useCases/clientDisconnectUseCase.j
 const clientDisconnect = {
 
     run: (data) => {
-
-        console.log(data)
-
         try {
             clientDisconnect.log(data)
             return ClientDisconnectUseCase.run(data)

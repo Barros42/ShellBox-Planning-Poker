@@ -52,7 +52,8 @@ const DashboardPage = () => {
 
     const vote = useCallback(
         (vote: string) =>{
-            localStorage.setItem(LocalStorageKeys.UserLastVote, vote)
+            const encodedVote = Buffer.from(vote).toString('base64')
+            localStorage.setItem(LocalStorageKeys.UserLastVote, encodedVote)
             setTempLastVote(vote)
             socketService!.emit(SocketEvents.output.userVoted, {
                 vote,
@@ -70,7 +71,8 @@ const DashboardPage = () => {
     }
 
     useEffect(() => {
-        const lastVote = localStorage.getItem(LocalStorageKeys.UserLastVote)
+        const lastVoteEncoded = localStorage.getItem(LocalStorageKeys.UserLastVote) || ''
+        const lastVote = Buffer.from(lastVoteEncoded, 'base64').toString()
         if(socketService && lastVote && !tempLastVote) { vote(lastVote) }
     }, [socketService, vote, tempLastVote])
 
