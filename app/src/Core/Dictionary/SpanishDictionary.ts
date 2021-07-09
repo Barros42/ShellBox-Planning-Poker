@@ -3,6 +3,7 @@ import IDictionary from "./IDictionary";
 export default class SpanishDictionary implements IDictionary {
   changeDefaultLanguage: string = 'Cambiar el idioma';
   clearVotes: string = 'Limpiar Votos'
+  changeHistory: string = 'Cambia La Historia'
   votes: string = 'Votos'
   hide: string = 'Ocultar'
   show: string = 'Mostrar'
@@ -13,4 +14,7 @@ export default class SpanishDictionary implements IDictionary {
   selectARoom: string = 'Seleccione una Sala'
   enter: string = 'Entrar'
   username: string = 'Usuario'
+  story: string = 'Historia'
+  newStory: string = 'Nueva historia'
+  change: string = 'Cambiar'
 }

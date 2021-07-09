@@ -7,6 +7,7 @@ import SocketEvents from '../../domain/events/socketEvents.js'
 import getDataFromHandshake from '../../helpers/getDataFromHandshake.js'
 import ClientEvents from '../../domain/events/clientEvents.js'
 import extractDataFromEvent from '../../helpers/extractDataFromEvent.js'
+import changeStoryName from '../functions/rooms/changeStoryName.js'
 
 const registerEvents = (io) => {
 
@@ -65,6 +66,17 @@ const registerEvents = (io) => {
         io.to(eventData.room).emit(ClientEvents.cleanVotes)
         io.to(eventData.room).emit(ClientEvents.refreshRoom, functionResponse)
     })
+
+    /**
+     * @ On User Change Story
+     */
+    socket.on(SocketEvents.userChangeStory, (payload) => {
+        const eventData = extractDataFromEvent(socket, payload)
+        const functionResponse = changeStoryName.run(eventData)
+        io.to(eventData.room).emit(ClientEvents.cleanVotes)
+        io.to(eventData.room).emit(ClientEvents.refreshRoom, functionResponse)
+    })
+
   });
 
 }

@@ -8,8 +8,9 @@ import ShellPokerPages from '../../../Pages';
 
 interface IMainMenToolbar {
     changeVoteVisibility: Function,
+    cleanRoomVotes: Function,
+    changeHistory: Function
     voteVisibility: boolean,
-    cleanRoomVotes: Function
 }
 
 const MainMenToolbar = (props: IMainMenToolbar) => {
@@ -21,7 +22,7 @@ const MainMenToolbar = (props: IMainMenToolbar) => {
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
       setAnchorEl(event.currentTarget);
     };
-  
+
     const handleClose = () => {
       setAnchorEl(null);
     };
@@ -46,6 +47,7 @@ const MainMenToolbar = (props: IMainMenToolbar) => {
                 onClose={handleClose}
             >
                 <MenuItem onClick={() => { props.changeVoteVisibility(); handleClose() }}>{`${(props.voteVisibility) ? Dictionary.hide : Dictionary.show} ${Dictionary.votes}`}</MenuItem>
+                <MenuItem onClick={() => { props.changeHistory(); handleClose(); }}>{Dictionary.changeHistory}</MenuItem>
                 <MenuItem onClick={() => { props.cleanRoomVotes(); handleClose(); }}>{Dictionary.clearVotes}</MenuItem>
                 <MenuItem onClick={() => { logoutAndRedirect(); }}>{Dictionary.logout}</MenuItem>
             </MainMenu>

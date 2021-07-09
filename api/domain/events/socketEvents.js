@@ -4,7 +4,8 @@ const SocketEvents = {
     userExiting: 'userExiting',
     userSendNewVote: 'newVote',
     userChangeVoteVisibility: 'changeVoteVisibility',
-    userCleanRoomVotes: 'cleanVotes'
+    userCleanRoomVotes: 'cleanVotes',
+    userChangeStory: 'changeStory'
 }
 
 export default SocketEvents

@@ -1,5 +1,5 @@
 import './index.css'
-import { Button, Container} from '@material-ui/core'
+import { Container } from '@material-ui/core'
 import React, { useCallback, useEffect, useState }  from 'react'
 import MainToolbar from '../../Components/Shared/MainToolbar'
 import ShellCard from '../../Components/ShellCard'
@@ -70,6 +70,10 @@ const DashboardPage = () => {
         socketService!.emit(SocketEvents.output.cleanVotes, null)
     }
 
+    const changeStory = (newStoryName: string) => {
+        socketService!.emit(SocketEvents.output.changeStory, {storyName: newStoryName})
+    }
+
     useEffect(() => {
         const lastVoteEncoded = localStorage.getItem(LocalStorageKeys.UserLastVote) || ''
         const lastVote = Buffer.from(lastVoteEncoded, 'base64').toString()
@@ -96,16 +100,11 @@ const DashboardPage = () => {
             changeVoteVisibility={changeVoteVisibility}
             cleanRoomVotes={cleanRoomVotes}
             voteVisibility={showVotes}
+            changeStory={changeStory}
             />
 
             <Container id='shell-main-container-with-toolbar' maxWidth="lg">
-                <div id="shell-story-label">
-                    <Button color="secondary">
-                        <b>Story</b>
-                    </Button>
-                </div>
-                <div id="shell-story-name">{currentHistory}</div>
-
+               <div id="shell-story-name">{currentHistory}</div>
                <div id="shell-card-table">
                 {options.map(option => <ShellCard key={option} voteFunction={vote} value={option} currentVote={tempLastVote} isVisible={showVotes}/>)}
                </div>

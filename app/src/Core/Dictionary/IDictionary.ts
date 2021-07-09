@@ -6,9 +6,13 @@ export default interface IDictionary {
   show: string
   votes: string
   clearVotes: string
+  changeHistory: string
   logout: string
   selectARoom: string
   enter: string
   username: string
   changeDefaultLanguage: string
+  story: string
+  newStory: string
+  change: string
 }

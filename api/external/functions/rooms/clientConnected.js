@@ -1,6 +1,4 @@
 import ClientConnectedUseCase from '../../../useCases/clientConnectedUseCase.js'
-import getDataFromHandshake from '../../../helpers/getDataFromHandshake.js'
-import ClientEvents from '../../../domain/events/clientEvents.js'
 
 const clientConnected = {
 

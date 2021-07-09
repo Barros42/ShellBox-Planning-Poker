@@ -56,6 +56,10 @@ const RoomRepository = {
             user.vote = null
             return user
         })
+    },
+
+    updateRoomStory: (room, storyName) => {
+        users[room].story = storyName
     }
 
 }

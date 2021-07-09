@@ -1,5 +1,4 @@
 import ChangeVoteVisibilityUseCase from '../../../useCases/changeVoteVisibilityUseCase.js'
-import ClientEvents from '../../../domain/events/clientEvents.js'
 
 const changeVoteVisibility = {
     run: (data) => {

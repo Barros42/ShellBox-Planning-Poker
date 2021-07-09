@@ -1,5 +1,4 @@
 import NewClientVoteUseCase from '../../../useCases/newClientVoteUseCase.js'
-import getDataFromHandshake from '../../../helpers/getDataFromHandshake.js'
 
 const newClientVote = {
 

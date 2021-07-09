@@ -8,6 +8,7 @@ class SocketEventsOutput {
     readonly userVoted = 'newVote'
     readonly changeVoteVisibility = 'changeVoteVisibility'
     readonly cleanVotes = 'cleanVotes'
+    readonly changeStory = 'changeStory'
 }
 
 

@@ -1,5 +1,5 @@
 import './index.css'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Button, Card, Container, FormControl, MenuItem, Select, TextField, Typography } from '@material-ui/core'
 import RegisterUserUseCase from '../../UseCases/Pages/Welcome/registerUser.useCase'
 import { useHistory } from 'react-router-dom'
@@ -19,8 +19,8 @@ const WelcomePage = () => {
 
     const registerUser = async () => {
         registerUserUseCase.registerUser(userName, userRoom)
-            .then((bool) => {
-               if(bool) { appHistory.push(ShellPokerPages.DashboardPage.path) }
+            .then((success) => {
+               if(success) { appHistory.push(ShellPokerPages.DashboardPage.path) }
             })
     }
 
