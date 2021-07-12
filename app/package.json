@@ -1,11 +1,11 @@
 {
   "name": "shell-planning-poker",
-  "version": "0.6.0",
+  "version": "1.0.0",
   "private": true,
   "author": {
     "name": "Matheus de Barros Fagionato",
     "email": "mdbf42@gmail.com",
-    "url": "https://github.com/Barros42/ShellBox-PP"
+    "url": "https://github.com/Barros42/ShellBox-Planning-Poker"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
