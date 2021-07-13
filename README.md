@@ -1,4 +1,4 @@
-# Shellbox Planning Poker
+# Shellbox Planning Poker @ v1.0.1
 
 ## 💻 Motivo
 
