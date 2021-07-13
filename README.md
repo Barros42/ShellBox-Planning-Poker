@@ -15,7 +15,7 @@ Este projeto não tem a intenção de ficar pronto um dia, ou seja, ele será et
 - Sem nescessidade de banco de dados
 - Eventos em tempo real
 - Possíbilidade de deploy com Docker
-- Local Storage em Codificado
+- Local Storage codificado
 
 ## Idiomas
 - Português
