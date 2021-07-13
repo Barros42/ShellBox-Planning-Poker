@@ -1,4 +1,4 @@
-# Shellbox Planning Poker - v1.0.0
+# Shellbox Planning Poker
 
 ## 💻 Motivo
 
@@ -15,7 +15,7 @@ Este projeto não tem a intenção de ficar pronto um dia, ou seja, ele será et
 - Sem nescessidade de banco de dados
 - Eventos em tempo real
 - Possíbilidade de deploy com Docker
-- Local Storage codificado
+- Local Storage em Codificado
 
 ## Idiomas
 - Português
@@ -26,7 +26,7 @@ Este projeto não tem a intenção de ficar pronto um dia, ou seja, ele será et
 O **ShellBox Planning Poker** é uma iniciativa feita pelos desenvolvedores do time de tecnologia do **Shellbox** na **Raízen**. Este projeto **não tem nenhuma ligação com a marca Shell** e seus correlacionados. 
 Este projeto tem em sua natureza intenção de ajudar outros desenvolvedores a estimar de melhor forma o esforço necessário para o desenvolvimento das funcionalidades de uma aplicação.
 
-Ao clonar este repositórios, por favor substitua os valores nos arquivos localizados na seção <a href="#inicializar">Inicializar</a>
+Ao clonar este repositórios, por favor substitua os dados 
 
 ## 🚀 Tecnologias
 
@@ -44,20 +44,26 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 Para instalar e utilizar a aplicação dentro da sua empresa e/ou time, basta clonar este repositório e rodar o comando abaixo dentro das pastas **API** e **APP**
 
     yarn install
+    yarn start
 ou
 
     npm install
+    npm start
 
 Logo após o projeto estará pronto para uso, porém, não se esqueça de customizar de acordo com a sua empresa. 
 
 Para isso basta alterar os arquivos abaixo. 
 
 - 📁**API** 
-	- 🗄️ [API - appConfig.json](https://github.com/Barros42/SB-Planning-Poker/blob/6e7d64659214102ce045a17a2fcf2b7e9cf2600d/api/appConfig.json)
+	- 📂 src
+		- 🗄️ [API - appConfig.json](https://github.com/Barros42/SB-Planning-Poker/blob/6e7d64659214102ce045a17a2fcf2b7e9cf2600d/api/appConfig.json)
 - 📂 **APP**
-	- 🗄️ [APP - appConfig.json](https://github.com/Barros42/SB-Planning-Poker/blob/559eebf411ebaa55bb7ff1fc5eb04af7780e31d6/app/src/appConfig.json)
-	- 🗄️ [APP - logo.svg](https://github.com/Barros42/SB-Planning-Poker/blob/67f3de56947ea739ac40cb33b84187410b174111/app/src/assets/images/logo.svg)
-	- 🗄️ [APP - variables.css](https://github.com/Barros42/SB-Planning-Poker/blob/67f3de56947ea739ac40cb33b84187410b174111/app/src/Styles/variables.css)
+	-  📂 src 
+		- 🗄️ [APP - appConfig.json](https://github.com/Barros42/SB-Planning-Poker/blob/559eebf411ebaa55bb7ff1fc5eb04af7780e31d6/app/src/appConfig.json)
+	-  📂 assets/images
+		- 🗄️ [APP - logo.svg](https://github.com/Barros42/SB-Planning-Poker/blob/67f3de56947ea739ac40cb33b84187410b174111/app/src/assets/images/logo.svg)
+	-  📂 styles
+		- 🗄️ [APP - variables.css](https://github.com/Barros42/SB-Planning-Poker/blob/67f3de56947ea739ac40cb33b84187410b174111/app/src/Styles/variables.css)
 
 ## 🤔  Como contribuir
 
