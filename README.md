@@ -2,7 +2,7 @@
 
 ## 💻 Motivo
 
-O **Planning Poker** é uma estratégia muito aplicada em projetos que utilizam metodologias ágeis, especialmente o Scrum, cujo objetivo é estimar o esforço necessário para o desenvolvimento das funcionalidades de uma aplicação. 
+O **Planning Poker v1.0.0** é uma estratégia muito aplicada em projetos que utilizam metodologias ágeis, especialmente o Scrum, cujo objetivo é estimar o esforço necessário para o desenvolvimento das funcionalidades de uma aplicação. 
 Tendo em vista que a maioria dos serviços de Planning Poker são pagos este projeto tem como objetivo disponibilizar um aplicativo customizado de forma simples, prática e rápida para cada empresa e/ou time.
 
 Este projeto não tem a intenção de ficar pronto um dia, ou seja, ele será eternamente aberto a novas contribuições e melhorias.
