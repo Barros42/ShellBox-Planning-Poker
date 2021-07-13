@@ -1,6 +1,6 @@
 {
   "APP_NAME" : "ShellBox - Planning Poker",
-  "API_URL" : "http://localhost:8080",
+  "API_URL" : "http://192.168.15.184:8080",
 
   "ROOMS" : [
     { "nick": "vpower", "name": "V-Power" },
