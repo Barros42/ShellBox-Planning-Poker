@@ -26,7 +26,7 @@ Este projeto não tem a intenção de ficar pronto um dia, ou seja, ele será et
 O **ShellBox Planning Poker** é uma iniciativa feita pelos desenvolvedores do time de tecnologia do **Shellbox** na **Raízen**. Este projeto **não tem nenhuma ligação com a marca Shell** e seus correlacionados. 
 Este projeto tem em sua natureza intenção de ajudar outros desenvolvedores a estimar de melhor forma o esforço necessário para o desenvolvimento das funcionalidades de uma aplicação.
 
-Ao clonar este repositórios, por favor substitua os dados 
+Ao clonar este repositórios, por favor substitua os valores nos arquivos localizados na seção <a href="#-inicializar">Inicializar</a>
 
 ## 🚀 Tecnologias
 
