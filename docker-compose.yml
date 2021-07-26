@@ -6,7 +6,7 @@ services:
     build: ./api
     container_name: shellbox-pp-api
     ports: 
-      - 8081:8080
+      - 8080:8080
 
   shellbox-pp-app:
     build: ./app
